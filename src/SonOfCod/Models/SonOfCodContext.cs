@@ -15,6 +15,8 @@ namespace SonOfCod.Models
 
         }
 
+        public virtual DbSet<Recipient> Recipients { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=SonOfCod;integrated security=True");

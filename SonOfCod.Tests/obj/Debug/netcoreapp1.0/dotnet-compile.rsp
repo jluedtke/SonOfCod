@@ -196,4 +196,6 @@
 --reference:C:\Users\Jared\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
 --reference:c:\Users\Jared\documents\visual studio 2015\Projects\SonOfCod\src\SonOfCod\bin\Debug\netcoreapp1.0\SonOfCod.dll
 c:\Users\Jared\documents\visual studio 2015\Projects\SonOfCod\SonOfCod.Tests\ControllerTests\HomeControllerTests.cs
+c:\Users\Jared\documents\visual studio 2015\Projects\SonOfCod\SonOfCod.Tests\ControllerTests\NewsletterControllerTests.cs
+c:\Users\Jared\documents\visual studio 2015\Projects\SonOfCod\SonOfCod.Tests\ModelTests\RecipientTests.cs
 c:\Users\Jared\documents\visual studio 2015\Projects\SonOfCod\SonOfCod.Tests\Properties\AssemblyInfo.cs

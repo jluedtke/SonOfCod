@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Mailing List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<SonOfCod.Models.Recipient>
+
+<h2>Mailing List - Admin Only</h2>
+<hr />
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var person in Model)
+        {
+            <li>@Html.DisplayFor(model => person.Email) : @Html.DisplayFor(model => person.FirstName)</li>
+
+        }
+    </ul>
+
+}
+else {
+    <p>There's no one here dude, you gotta populate the database.</p>
+}

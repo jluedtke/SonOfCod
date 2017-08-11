@@ -11,10 +11,13 @@ namespace SonOfCod.Models
     public class Recipient
     {
         [Key]
-        private int RecipeintId { get; set; }
-        private string Email { get; set; }
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private string PhoneNumber { get; set; }
+        public int RecipeintId { get; set; }
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

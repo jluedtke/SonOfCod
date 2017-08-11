@@ -8,9 +8,10 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(SonOfCodContext))]
-    partial class SonOfCodContextModelSnapshot : ModelSnapshot
+    [Migration("20170811200928_RecipientTableAdded")]
+    partial class RecipientTableAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -177,8 +178,7 @@ namespace SonOfCod.Migrations
                     b.Property<int>("RecipeintId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Email")
-                        .IsRequired();
+                    b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
 
