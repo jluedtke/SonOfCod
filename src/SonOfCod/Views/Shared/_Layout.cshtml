@@ -3,20 +3,49 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/CSS/minified-tuxedo.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="~/JS/minified-tuxedo.js"></script>
+
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/CSS/minified-tuxedo.css" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="~/JS/minified-tuxedo.js"></script>    
+    </environment>
+
+
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <h2>Son Of Cod</h2>
+    <h2 class="form-header-dark">Son Of Cod</h2>
     <hr />
-    <div>
-        <p>@Html.ActionLink("Home", "Index", "Home")</p>
-        <p>@Html.ActionLink("Marketplace", "Index", "Marketplace")</p>
-        <p>@Html.ActionLink("Newsletter", "Index", "Newsletter")</p>
-        <p>@Html.ActionLink("Admin Login", "Login", "Account")</p>
-
-
-    </div>
-    <div>
+    <nav class="nav-dark">
+        <ul class="menu-items">
+            <li class="f-col-1 flex-center">
+                @Html.ActionLink("Home", "Index", "Home")
+            </li>
+            <li class="f-col-1 flex-center">
+                @Html.ActionLink("Marketplace", "Index", "Marketplace")
+            </li>
+            <li class="f-col-1 flex-center">
+                @Html.ActionLink("Newsletter", "Index", "Newsletter")
+            </li>
+            <li class="f-col-1 flex-center">
+                @Html.ActionLink("Admin Login", "Login", "Account")
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
         @RenderBody()
     </div>
 </body>
