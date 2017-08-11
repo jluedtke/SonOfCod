@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h2>Son Of Cod</h2>
+    <hr />
+    <div>
+        <p>@Html.ActionLink("Home", "Index", "Home")</p>
+        <p>@Html.ActionLink("Admin Login", "Login", "Account")</p>
+
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
