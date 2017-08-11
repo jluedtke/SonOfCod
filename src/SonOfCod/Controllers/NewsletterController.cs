@@ -27,8 +27,11 @@ namespace SonOfCod.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Recipient r)
+        public IActionResult Index(Recipient r)
         {
+            if (r.Email == null)
+                return RedirectToAction("Index");
+
             db.Recipients.Add(r);
             db.SaveChanges();
             return RedirectToAction("Index");
