@@ -1,0 +1,17 @@
+﻿body {
+    text-align: center;
+}
+
+div {
+    background-color: dodgerblue;
+    color: white;
+
+}
+
+a {
+    color: white;
+}
+
+.btn-dark {
+    margin: 10px;
+}

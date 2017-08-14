@@ -7,10 +7,10 @@
     <title>@ViewData["Title"] - Wastelander</title>
 
     <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/minified-tuxedo.css" />
-        <script src="~/js/minified-tuxedo.js"></script>
-
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     </environment>
     <environment names="Staging,Production">
@@ -20,27 +20,47 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <h2 class="form-header-dark">Son Of Cod</h2>
-    <hr />
-    <nav class="nav-dark">
-        <ul class="menu-items">
-            <li class="f-col-1 flex-center">
-                @Html.ActionLink("Home", "Index", "Home")
-            </li>
-            <li class="f-col-1 flex-center">
-                @Html.ActionLink("Marketplace", "Index", "Marketplace")
-            </li>
-            <li class="f-col-1 flex-center">
-                @Html.ActionLink("Newsletter", "Index", "Newsletter")
-            </li>
-            <li class="f-col-1 flex-center">
-                @Html.ActionLink("Admin Login", "Login", "Account")
-            </li>
-        </ul>
-    </nav>
+<body style="background-color: oldlace">
+        <h2 class="form-header-dark">Son Of Cod</h2>
+        <nav class="nav-ghost-dark">
+            <ul class="menu-items">
+                <li class="f-col-2 flex-center">
+                    <a>@Html.ActionLink("Home", "Index", "Home")</a>
+                </li>
+                <li class="f-col-2 flex-center">
+                    <a>@Html.ActionLink("Marketplace", "Index", "Marketplace")</a>
+                </li>
+                <li class="f-col-2 flex-center">
+                    <a>@Html.ActionLink("Newsletter", "Index", "Newsletter")</a>
+                </li>
+                <li class="f-col-2 flex-center">
+                    <a>@Html.ActionLink("Admin Login", "Login", "Account")</a>
+                </li>
+            </ul>
+        </nav>
+    <br /><br /><br />
     <div class="container">
         @RenderBody()
     </div>
+
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
